@@ -10,11 +10,27 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        check = set()
-        curr = head
-        while curr != None:
-            if curr in check:
-                return True
-            check.add(curr)
-            curr = curr.next
-        return False
+        # First approach
+        # check = set()
+        # curr = head
+        # while curr != None:
+        #     if curr in check:
+        #         return True
+        #     check.add(curr)
+        #     curr = curr.next
+        # return False
+
+
+
+        #Second approach --- floyd hare and tortoise algo
+
+        if head is None:
+            return False
+        slow = head
+        fast = head.next
+        while slow != fast:
+            if fast == None or fast.next == None:
+                return None
+            slow = slow.next
+            fast = fast.next.next
+        return True
