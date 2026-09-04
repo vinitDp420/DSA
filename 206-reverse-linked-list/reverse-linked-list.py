@@ -11,7 +11,7 @@ class Solution(object):
         """
         curr = head
         prev = None 
-        while curr:
+        while curr != None:
             next_node = curr.next
             curr.next = prev
             prev = curr
